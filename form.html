@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Details Form
+        </title>
+        <link rel="stylesheet" type="text/css" href="/form/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        
+    <div class="mode">
+        <p align=rihgt></p>        
+        <p align=right><span class="change">OFF</span></p>
+    </div>
+     
+    </div>
+     
+    <script>
+        $( ".change" ).on("click", function() {
+            if( $( "body" ).hasClass( "dark" )) {
+                $( "body" ).removeClass( "dark" );
+                $( ".change" ).text( "OFF" );
+            } else {
+                $( "body" ).addClass( "dark" );
+                $( ".change" ).text( "ON" );
+            }
+        });
+    </script>
+    <style>
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+        body{
+            padding:5% 3% 10% 3%;
+            text-align:center;
+            }
+            img{
+                height:140px;
+                    width:140px;
+            }
+    </style>
+    </head>
+
+
+    <body>
+        <center>
+        <div class="rform"><h1> Details Form</h1></div>
+        <br><br>
+        <div class="sec2">
+            <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
+            <form name="register" action="/" target="dummyframe" method="POST" onsubmit="validateForm();">
+                <div id="name">
+                    <h2 class="name">Name</h2>  
+                    <input class="fname" id ="fname" type="text" required name="f_name" placeholder="Your Name" size="40"><br>
+                    <h2 class="name">Employee Id</h2>
+                    <input class="id" id="id" type="text" required name="emp_id" placeholder="emp id" size="40"><br>
+                    <h2 class="name">Age</h2>
+                    <input class="Age" id="Age" type="text" required name="emp_age" placeholder="your age" size="40"><br>
+                    <h2 class="name">Salary</h2>
+                    <input class="sal" id="sal" type="text" required name="emp_sal" placeholder="Your Sal" size="40"><br>
+                    <h2 class="name">City</h2>
+                    <input class="city" id="city" type="text" required name="emp_city" placeholder="your location" size="40"><br>
+
+                     <br>   
+                     <button type="reset" id="reset" style="vertical-align:middle"><span>Clear </span></button>
+                     <button type="submit" id="submit" style="vertical-align:middle"><span>Submit</span></button>
+                    
+            </div>  
+            </form>
+        </div>
+
+        <!-- <script src="./forms/form.js"></script> -->
+        </center>
+        <script>
+            /*$("#submit").click(function() {
+               alert("Details successfully added.");
+            });*/
+            function validateForm() {
+  var x = document.forms["register"]["f_name"].value;
+  var y = document.forms["register"]["emp_id"].value;
+  var z = document.forms["register"]["emp_age"].value;
+  var a = document.forms["register"]["emp_sal"].value;
+  var b = document.forms["register"]["emp_city"].value;
+  if (x == "" || y=="" || z=="" || a=="" || b=="") {
+    alert("Name must be filled out");
+    return false;
+  }
+  else{
+    alert("Details successfully added.");
+    return true;
+  }
+}
+         </script>
+    </body>
+</html>
